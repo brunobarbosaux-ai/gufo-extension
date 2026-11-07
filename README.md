@@ -78,6 +78,9 @@ The client contract `gufo extension install <name>[@<version>]` will follow:
    recorded tree digest with `digest`. A mismatch aborts the install.
 4. Record the registry name and release in `installed.json`. No
    unvalidated-code warning is printed; gufo names the reviewed release instead.
+5. `gufo extension update` moves an extension installed from the registry to
+   the newest compatible reviewed release, and builds every installed
+   extension that has no module for the running gufo.
 
 The digest is the one `gufo extension install` already records: SHA-256 over
 every regular file outside `.git`, in path order, each as its relative POSIX
