@@ -1,0 +1,26 @@
+{
+  "extensions": {
+    "lfm3": {
+      "description": "LFM3 1.7B text, LFM3-VL 2B, LFM3-Audio 2B and d1-Omni 2B on Strix Halo",
+      "homepage": "https://github.com/gufo-org/lfm3-gufo-extension",
+      "license": "NOASSERTION",
+      "maintainers": [
+        "@fedeizzo"
+      ],
+      "releases": [
+        {
+          "api_version": ">= 0.2.6",
+          "digest": "sha256:ab5c3c91588e53432914e34a9a2f4ac4091a51d830b7372e6629b5e985ead6dd",
+          "notes": "Text, VL, audio (ASR/TTS) and decision providers.",
+          "platforms": [
+            "linux"
+          ],
+          "revision": "967f5e13ad501e4a505988f20694fed1e442ead1",
+          "version": "0.4.0"
+        }
+      ],
+      "source": "https://github.com/gufo-org/lfm3-gufo-extension"
+    }
+  },
+  "schema": 1
+}

@@ -1,0 +1,74 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/gufo-org/gufo-extension/schema/extension.schema.json",
+  "title": "Gufo extension registry entry",
+  "description": "One reviewed extension: extensions/<name>.json. tools/registry.py check enforces the same rules.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "name", "description", "homepage", "license", "maintainers", "source", "releases"],
+  "properties": {
+    "schema": { "const": 1 },
+    "name": {
+      "description": "The extension.json name; also the file name.",
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9_]*$"
+    },
+    "description": { "type": "string", "minLength": 1 },
+    "homepage": { "type": "string", "minLength": 1 },
+    "license": {
+      "description": "SPDX expression of the extension source license. Model weight licenses are documented by the extension.",
+      "type": "string",
+      "minLength": 1
+    },
+    "maintainers": {
+      "description": "GitHub handles accountable for the extension.",
+      "type": "array",
+      "minItems": 1,
+      "items": { "type": "string", "pattern": "^@[A-Za-z0-9](?:[A-Za-z0-9-]{0,38})$" }
+    },
+    "source": {
+      "description": "HTTPS Git URL that serves the release revisions.",
+      "type": "string",
+      "pattern": "^https://[^\\s@]+$"
+    },
+    "releases": {
+      "description": "Reviewed releases, newest first.",
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["version", "revision", "digest", "api_version", "platforms"],
+        "properties": {
+          "version": {
+            "description": "The extension.json version at this revision.",
+            "type": "string",
+            "pattern": "^(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)$"
+          },
+          "revision": {
+            "description": "The reviewed commit.",
+            "type": "string",
+            "pattern": "^[0-9a-f]{40}$"
+          },
+          "digest": {
+            "description": "SHA-256 of the checked-out tree, as gufo extension install records it (tools/registry.py digest).",
+            "type": "string",
+            "pattern": "^sha256:[0-9a-f]{64}$"
+          },
+          "api_version": {
+            "description": "The extension.json api_version at this revision.",
+            "type": "string",
+            "pattern": "^>= (0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)$"
+          },
+          "platforms": {
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": { "enum": ["linux", "windows"] }
+          },
+          "notes": { "type": "string" }
+        }
+      }
+    }
+  }
+}
