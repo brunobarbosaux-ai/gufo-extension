@@ -170,7 +170,8 @@ def check():
 
 
 def fetch(source, revision, destination: Path):
-    git = ["git", "-c", "advice.detachedHead=false"]
+    # Exact bytes, as gufo fetches them: no line-ending conversion.
+    git = ["git", "-c", "advice.detachedHead=false", "-c", "core.autocrlf=false"]
     subprocess.run(git + ["init", "--quiet", str(destination)], check=True)
     subprocess.run(git + ["-C", str(destination), "fetch", "--quiet", "--depth", "1",
                           source, revision], check=True)
