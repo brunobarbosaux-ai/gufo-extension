@@ -6,17 +6,10 @@ of the review. Keep the pull request discussion focused on that commit.
 
 ## Author checklist
 
-Copy into the pull request description:
-
-```markdown
-- [ ] Release: <name> <version> at <full commit>
-- [ ] Source license (SPDX):
-- [ ] Model weight licenses and how users obtain the weights:
-- [ ] Maintainers listed in the entry agree to be contacted about it
-- [ ] Builds with `gufo extension install <source>@<commit>` on: <platforms, gufo revision>
-- [ ] Evidence: conformance results, quality report and benchmark settings, or a link to them in the extension repository
-- [ ] Changes since the previous release (for an update): <compare link>
-```
+The [pull request template](.github/pull_request_template.md) carries the
+author checklist: release and commit, source license, model weight licenses,
+maintainers, build platforms and gufo revision, evidence and, for an update,
+the changes since the previous release.
 
 ## Reviewer checklist
 

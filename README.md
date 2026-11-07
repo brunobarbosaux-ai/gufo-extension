@@ -1,9 +1,5 @@
 # Gufo extension registry
 
-> **Draft** for [gufo-org/gufo#1075](https://github.com/gufo-org/gufo/issues/1075).
-> Gufo does not read this registry yet: until it does,
-> `gufo extension install <name>` explains that the registry is unavailable.
-
 The registry lists extensions whose specific source revisions the Gufo
 maintainers have reviewed. With it, users install an extension by name:
 
@@ -88,6 +84,10 @@ path, a NUL byte and its contents. `tools/registry.py digest <dir>` computes it.
 
 ## Add or update an extension
 
+Every change to the registry is made by hand in a pull request and merged by
+a maintainer after review. No automation writes to the registry: CI only
+checks what the pull request contains.
+
 1. Tag or pick the commit to publish. Its `extension.json` must carry the
    version you list.
 2. Compute the digest of a clean checkout of that commit:
@@ -98,11 +98,13 @@ path, a NUL byte and its contents. `tools/registry.py digest <dir>` computes it.
    python3 /path/to/gufo-extension/tools/registry.py digest .
    ```
 
-3. Add or extend `extensions/<name>.json`, run `tools/registry.py index` and
-   `tools/registry.py check`, and open a pull request with the checklist from
-   [REVIEW.md](REVIEW.md) filled in.
-4. CI fetches each new release and verifies its manifest fields and digest.
-   A maintainer reviews the source and approves.
+3. Add or extend `extensions/<name>.json`, regenerate `index.json` with
+   `tools/registry.py index`, and run `tools/registry.py check`.
+4. Open a pull request and fill in the template's checklist.
+5. CI checks the entries, confirms `index.json` matches them, and fetches each
+   new release to verify its manifest fields and digest. It never changes the
+   pull request. A maintainer reviews the source following
+   [REVIEW.md](REVIEW.md) and merges.
 
 ```sh
 python3 tools/registry.py check            # entries and index.json
