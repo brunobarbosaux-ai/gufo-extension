@@ -1,0 +1,18 @@
+{
+  "schema": 1,
+  "name": "deepseek41flash",
+  "description": "DeepSeek V4.1 Flash on Strix Halo: DSpark drafting, vision, tool calls and SSD expert streaming",
+  "homepage": "https://github.com/franzmoca/ds41-gufo-extension",
+  "license": "MIT",
+  "maintainers": ["@franzmoca"],
+  "source": "https://github.com/franzmoca/ds41-gufo-extension",
+  "releases": [
+    {
+      "version": "0.1.0",
+      "revision": "ab48afcab3390f781db703a9c09c2fd52c29fc24",
+      "digest": "sha256:a531ab549fd4525c995b71e6aa2ee8c2692b5167f73a611753a6f29ca30b842c",
+      "api_version": ">= 0.2.14",
+      "platforms": ["linux"]
+    }
+  ]
+}
