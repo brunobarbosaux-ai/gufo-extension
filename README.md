@@ -46,8 +46,8 @@ installed extension runs native code with the user's permissions.
   "releases": [
     {
       "version": "0.4.0",
-      "revision": "967f5e13ad501e4a505988f20694fed1e442ead1",
-      "digest": "sha256:ab5c3c91588e53432914e34a9a2f4ac4091a51d830b7372e6629b5e985ead6dd",
+      "revision": "7a531b8280298eb05b3441395cf45c5d2b68a32d",
+      "digest": "sha256:aa515243c5ada69468527a4b836a2da0b7dd978da08e787f58d41b4feb5ca489",
       "api_version": ">= 0.2.6",
       "platforms": ["linux"],
       "notes": "Optional release notes."
