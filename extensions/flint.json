@@ -1,0 +1,18 @@
+{
+  "schema": 1,
+  "name": "flint",
+  "description": "Flint 40B MoE text generation",
+  "homepage": "https://github.com/brunobarbosaux-ai/flint-gufo-extension",
+  "license": "MIT",
+  "maintainers": ["@brunobarbosaux-ai"],
+  "source": "https://github.com/brunobarbosaux-ai/flint-gufo-extension",
+  "releases": [
+    {
+      "version": "0.1.0",
+      "revision": "efacf0e2f0e8e30f67bccff56dede129928a9f7f",
+      "digest": "sha256:6b35a930b4f2f73236be6af94149e4332131162e11e03bfbe88ec0687c1540b0",
+      "api_version": ">= 0.2.7",
+      "platforms": ["linux"]
+    }
+  ]
+}

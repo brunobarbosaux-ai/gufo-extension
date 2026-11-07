@@ -1,5 +1,45 @@
 {
   "extensions": {
+    "deepseek41flash": {
+      "description": "DeepSeek V4.1 Flash on Strix Halo: DSpark drafting, vision, tool calls and SSD expert streaming",
+      "homepage": "https://github.com/franzmoca/ds41-gufo-extension",
+      "license": "MIT",
+      "maintainers": [
+        "@franzmoca"
+      ],
+      "releases": [
+        {
+          "api_version": ">= 0.2.14",
+          "digest": "sha256:a531ab549fd4525c995b71e6aa2ee8c2692b5167f73a611753a6f29ca30b842c",
+          "platforms": [
+            "linux"
+          ],
+          "revision": "ab48afcab3390f781db703a9c09c2fd52c29fc24",
+          "version": "0.1.0"
+        }
+      ],
+      "source": "https://github.com/franzmoca/ds41-gufo-extension"
+    },
+    "flint": {
+      "description": "Flint 40B MoE text generation",
+      "homepage": "https://github.com/brunobarbosaux-ai/flint-gufo-extension",
+      "license": "MIT",
+      "maintainers": [
+        "@brunobarbosaux-ai"
+      ],
+      "releases": [
+        {
+          "api_version": ">= 0.2.7",
+          "digest": "sha256:6b35a930b4f2f73236be6af94149e4332131162e11e03bfbe88ec0687c1540b0",
+          "platforms": [
+            "linux"
+          ],
+          "revision": "efacf0e2f0e8e30f67bccff56dede129928a9f7f",
+          "version": "0.1.0"
+        }
+      ],
+      "source": "https://github.com/brunobarbosaux-ai/flint-gufo-extension"
+    },
     "lfm3": {
       "description": "LFM3 1.7B text, LFM3-VL 2B, LFM3-Audio 2B and d1-Omni 2B on Strix Halo",
       "homepage": "https://github.com/gufo-org/lfm3-gufo-extension",
