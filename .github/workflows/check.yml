@@ -1,0 +1,36 @@
+name: Registry checks
+
+on:
+  pull_request:
+  push:
+    branches: [ main ]
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    name: Check entries and verify new releases
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out registry
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Check entries and index
+        run: python3 tools/registry.py check
+
+      - name: Verify changed entries
+        env:
+          BASE: ${{ github.event.pull_request.base.sha || github.event.before }}
+        run: |
+          set -euo pipefail
+          if [[ -z "$BASE" || "$BASE" =~ ^0+$ ]]; then
+            changed=$(ls extensions/*.json)
+          else
+            changed=$(git diff --name-only --diff-filter=AM "$BASE" HEAD -- 'extensions/*.json')
+          fi
+          for file in $changed; do
+            python3 tools/registry.py verify "$(basename "$file" .json)"
+          done
