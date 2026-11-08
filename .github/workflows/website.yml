@@ -1,0 +1,44 @@
+name: Website catalogue
+
+# Ask the website to refresh its reviewed extensions whenever the entries on
+# main change, so https://gufo.blog/extensions lists every reviewed release.
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'extensions/*.json'
+      - 'index.json'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: website
+  cancel-in-progress: true
+
+jobs:
+  dispatch:
+    name: Request website catalogue sync
+    runs-on: ubuntu-latest
+    steps:
+      - name: Create website token
+        id: app-token
+        uses: actions/create-github-app-token@bcd2ba49218906704ab6c1aa796996da409d3eb1 # v3.2.0
+        with:
+          client-id: ${{ vars.RELEASE_APP_CLIENT_ID }}
+          private-key: ${{ secrets.RELEASE_APP_PRIVATE_KEY }}
+          owner: ${{ github.repository_owner }}
+          repositories: website
+          permission-contents: write
+
+      - name: Send the pushed revision
+        env:
+          GH_TOKEN: ${{ steps.app-token.outputs.token }}
+          REVISION: ${{ github.sha }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          jq -n --arg ref "$REVISION" \
+            '{event_type: "gufo-extensions", client_payload: {ref: $ref}}' \
+            | gh api --method POST repos/gufo-org/website/dispatches --input -
