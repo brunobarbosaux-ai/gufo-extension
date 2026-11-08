@@ -105,6 +105,9 @@ checks what the pull request contains.
    new release to verify its manifest fields and digest. It never changes the
    pull request. A maintainer reviews the source following
    [REVIEW.md](REVIEW.md) and merges.
+6. The merge triggers `website.yml`, which asks the website to list the new
+   release in the [extension catalogue](https://gufo.blog/extensions), with
+   the providers and options of its `extension.json`.
 
 ```sh
 python3 tools/registry.py check            # entries and index.json
