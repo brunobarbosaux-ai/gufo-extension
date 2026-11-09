@@ -8,6 +8,14 @@
   "source": "https://github.com/brunobarbosaux-ai/flint-gufo-extension",
   "releases": [
     {
+      "version": "0.1.1",
+      "revision": "7420f20fa093b7116628c22a898e6b7f43a1424f",
+      "digest": "sha256:744ce829609f48129072478364a3903f5bd8550b0d6c53455d78f721d30366cc",
+      "api_version": ">= 0.2.7",
+      "platforms": ["linux"],
+      "notes": "Weight placement fix: decide kMalloc vs managed once per model load (Flash-Next pattern) instead of a bare hipMalloc per tensor, so machines with a small device-heap cap load successfully."
+    },
+    {
       "version": "0.1.0",
       "revision": "efacf0e2f0e8e30f67bccff56dede129928a9f7f",
       "digest": "sha256:6b35a930b4f2f73236be6af94149e4332131162e11e03bfbe88ec0687c1540b0",
