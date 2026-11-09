@@ -70,6 +70,26 @@
         }
       ],
       "source": "https://github.com/gufo-org/lfm3-gufo-extension"
+    },
+    "strycast_qwen35moe": {
+      "description": "Qwen3.6-35B-A3B and Ornith 1.5 122B on Strix Halo with MTP and DFlash2 speculative decoding",
+      "homepage": "https://github.com/slimsami/strycast-qwen35moe-gufo-extension",
+      "license": "MIT",
+      "maintainers": [
+        "@slimsami"
+      ],
+      "releases": [
+        {
+          "api_version": ">= 0.2.0",
+          "digest": "sha256:03a06f35f0ca7939a3c6e433b276c01e0d4d3895a223332a304b84d142daa47e",
+          "platforms": [
+            "linux"
+          ],
+          "revision": "4882b7a6954fe472218d0d120ee3665076fe71fa",
+          "version": "0.0.1"
+        }
+      ],
+      "source": "https://github.com/slimsami/strycast-qwen35moe-gufo-extension"
     }
   },
   "schema": 1
