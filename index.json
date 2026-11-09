@@ -30,6 +30,16 @@
       "releases": [
         {
           "api_version": ">= 0.2.7",
+          "digest": "sha256:129994a14f8e0c02ba6301a729494b9779cf0b075b39c881323f89d31decdd0c",
+          "notes": "Session contexts are sized to the request (prompt + generation) instead of a hardcoded 8192, clamped to the model's 262144 native context and to free device memory, so long contexts degrade gracefully instead of failing.",
+          "platforms": [
+            "linux"
+          ],
+          "revision": "b8c6d165f0888d5d516563dc382ae0ab24c5eeaa",
+          "version": "0.2.0"
+        },
+        {
+          "api_version": ">= 0.2.7",
           "digest": "sha256:744ce829609f48129072478364a3903f5bd8550b0d6c53455d78f721d30366cc",
           "notes": "Weight placement fix: decide kMalloc vs managed once per model load (Flash-Next pattern) instead of a bare hipMalloc per tensor, so machines with a small device-heap cap load successfully.",
           "platforms": [
