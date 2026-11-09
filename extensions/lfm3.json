@@ -11,9 +11,9 @@
   "releases": [
     {
       "version": "0.4.0",
-      "revision": "7a531b8280298eb05b3441395cf45c5d2b68a32d",
-      "digest": "sha256:aa515243c5ada69468527a4b836a2da0b7dd978da08e787f58d41b4feb5ca489",
-      "api_version": ">= 0.2.6",
+      "revision": "cbc13fed6deffabe39c2677abf915643137c248a",
+      "digest": "sha256:22d202c229731b913e7fb10e32ba446be1502d8a603da4483b0dd78aa5350788",
+      "api_version": ">= 0.2.16",
       "platforms": [
         "linux"
       ],

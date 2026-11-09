@@ -10,11 +10,11 @@
       "releases": [
         {
           "api_version": ">= 0.2.14",
-          "digest": "sha256:a531ab549fd4525c995b71e6aa2ee8c2692b5167f73a611753a6f29ca30b842c",
+          "digest": "sha256:5fe9152d7ba2545a79f709a304911e5cb63139de91b7114967bf35c43470a721",
           "platforms": [
             "linux"
           ],
-          "revision": "ab48afcab3390f781db703a9c09c2fd52c29fc24",
+          "revision": "071c051471f7f00b0b15e88c5eabe19b5662431c",
           "version": "0.1.0"
         }
       ],
@@ -59,13 +59,13 @@
       ],
       "releases": [
         {
-          "api_version": ">= 0.2.6",
-          "digest": "sha256:aa515243c5ada69468527a4b836a2da0b7dd978da08e787f58d41b4feb5ca489",
+          "api_version": ">= 0.2.16",
+          "digest": "sha256:22d202c229731b913e7fb10e32ba446be1502d8a603da4483b0dd78aa5350788",
           "notes": "Text, VL, audio (ASR/TTS) and decision providers.",
           "platforms": [
             "linux"
           ],
-          "revision": "7a531b8280298eb05b3441395cf45c5d2b68a32d",
+          "revision": "cbc13fed6deffabe39c2677abf915643137c248a",
           "version": "0.4.0"
         }
       ],
